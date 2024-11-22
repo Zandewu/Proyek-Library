@@ -73,18 +73,20 @@ int getOption(){
 
 void tambahsiswa(){
 	fstream myfile;
-	string buffer;
 	
 	myfile.open("siswa.txt", ios::out | ios::in);
 	
 	if(myfile.is_open()){
 		cout<<"data ditemukan, melanjutkan operasi"<<endl;
+		myfile.close();
+		myfile.open("siswa.txt", ios::app | ios::out | ios::in);
 		}
 	else{
 		cout<<"data tidak ditemukan, membuat data baru..."<<endl;
 		myfile.close();
 		myfile.open("siswa.txt", ios::trunc | ios::out | ios::in);
-		myfile <<left<<setw(6)<<"NIS"<<"|"<<setw(30)<<"NAMA"<<"|"<<setw(11)<<"KELAS"<<setw(10)<<endl;
+		myfile<<left<<setw(6)<<"NIS"<<"|"<<setw(30)<<"NAMA"<<"|"<<setw(13)<<"KELAS"<<endl;
+		
 		}
 		
 		siswa tambah;
@@ -96,8 +98,6 @@ void tambahsiswa(){
 		getline(cin, tambah.nama);
 		cout<<"KELAS : ";
 		getline(cin, tambah.kelas);
-
-		myfile.seekp(4, fstream::end);
 		
 		myfile <<left<<setw(6)<< tambah.nis <<"|"<<setw(30)<<tambah.nama<<"|"<<setw(13)<<tambah.kelas<<endl;
 	
