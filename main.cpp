@@ -83,22 +83,23 @@ void tambahsiswa(){
 	else{
 		cout<<"data tidak ditemukan, membuat data baru..."<<endl;
 		myfile.close();
-		myfile.open("siswa.txt", ios::trunc | ios::out);
-		myfile <<setw(5)<<"NIS  "<<"|"<<setw(16)<<"NAMA           "<<"|"<<setw(11)<<"KELAS     "<<setw(10)<<"space : "<<15<<endl;
+		myfile.open("siswa.txt", ios::trunc | ios::out | ios::in);
+		myfile <<left<<setw(6)<<"NIS"<<"|"<<setw(30)<<"NAMA"<<"|"<<setw(11)<<"KELAS"<<setw(10)<<endl;
 		}
 		
 		siswa tambah;
 		cout<<"NIS : ";
 		cin>>tambah.nis;
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		
 		cout<<"NAMA : ";
 		getline(cin, tambah.nama);
 		cout<<"KELAS : ";
 		getline(cin, tambah.kelas);
-		
+
 		myfile.seekp(4, fstream::end);
 		
-		myfile <<setw(5)<< tambah.nis <<"|"<<setw(16)<<tambah.nama<<"|"<<setw(11)<<tambah.kelas<<endl;
+		myfile <<left<<setw(6)<< tambah.nis <<"|"<<setw(30)<<tambah.nama<<"|"<<setw(13)<<tambah.kelas<<endl;
 	
 	myfile.close();
 	
