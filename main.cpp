@@ -79,12 +79,12 @@ void tambahsiswa(){
 	if(myfile.is_open()){
 		cout<<"data ditemukan, melanjutkan operasi"<<endl;
 		myfile.close();
-		myfile.open("siswa.txt", ios::app | ios::out | ios::in);
+		myfile.open("siswa.txt", ios::out | ios::app);
 		}
 	else{
 		cout<<"data tidak ditemukan, membuat data baru..."<<endl;
 		myfile.close();
-		myfile.open("siswa.txt", ios::trunc | ios::out | ios::in);
+		myfile.open("siswa.txt", ios::out | ios::trunc);
 		myfile<<left<<setw(6)<<"NIS"<<"|"<<setw(30)<<"NAMA"<<"|"<<setw(13)<<"KELAS"<<endl;
 		
 		}
@@ -103,4 +103,4 @@ void tambahsiswa(){
 	
 	myfile.close();
 	
-	}
+}
