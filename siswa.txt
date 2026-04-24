@@ -1,2 +1,2 @@
 NIS   |NAMA                          |KELAS        
-12355 |MUHAMMAD ZAINY ARIF MIMA      |10 RPL 2     
+12345 |MUHAMMAD ZAINY ARIF MIMA      |10 RPL 2     
